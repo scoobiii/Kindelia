@@ -1,0 +1,13 @@
+contract AlienacaoAtivo {
+    state:
+        contratos: Map[Address, Int] = {}
+
+    function registrarContrato(address: Address, quantidade: Int):
+        contratos[address] = quantidade
+        log("Contrato registrado", address, quantidade)
+
+    function liquidarContrato(address: Address):
+        quantidade = contratos[address]
+        assert(quantidade != null, "Contrato não encontrado")
+        contratos[address] = 0
+        log("Contrato liquidado", address, quantidade)
