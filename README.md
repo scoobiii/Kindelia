@@ -1,219 +1,235 @@
 
-# 🌐 Kindelia: The Peer-to-Peer Functional Computer  
-> *A minimal decentralized computer that runs forever.*  
+---
 
-[![CI/CD](https://img.shields.io/github/actions/workflow/status/scoobiii/Kindelia/ci.yml)](https://github.com/scoobiii/Kindelia/actions)  
-[![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/scoobiii/Kindelia)  
-[![DAO Status](https://img.shields.io/badge/DAO-Active-blue)](https://github.com/scoobiii/Kindelia/blob/master/docs/DAO_STRUCTURE.md)  
+# 🌐 Kindelia: Computador Funcional Peer-to-Peer
 
+> *Um cryptocomputer minimalista, seguro, distribuído, com blockchain massivamente paralela e suporte à tokenização de energia e ativos produtivos.*
 
-
-## 🚧 Status: Work-in-Progress
-
-Kindelia é um cryptocomputer com blockchain massivamente paralela, capaz de hospedar DApps descentralizados que nunca ficam offline.
-É um repensar minimalista do Ethereum, mas baseado em type theory, functional purity e verifiable computation.
-
-Agora, Kindelia integra um módulo de tokenização de energia e multiativos, permitindo:
-
-Tokenização de energia solar e outros ativos produtivos.
-
-Alienação a financiadores com parcelas compatíveis com contas de energia, juros ≤0,5% ao mês.
-
-Criação de ativos híbridos, mesclando energia tokenizada com criptoativos clássicos ou outros setores.
-
-Fork melhorado por: Zeh Sobrinho & GOS3, Gang of Seven Senior Full Stack DevOps & Scoobiii
-
-⚙️ Core Philosophy
-    Principle	Description
-    🪙 No native coin	Kindelia é um cryptocomputer, não uma criptomoeda. Valor está na computação e nos ativos tokenizados.
-    ⚡ Functional Efficiency	HVM (High-order Virtual Machine) executa códigos funcionais com custo mínimo.
-    ⏱️ Real-Time Execution	Blocos de 1 segundo, heaps reversíveis e armazenamento gratuito (SSTORE).
-    🧩 Extreme Minimalism	~10k LOC em Rust (vs 600k+ em Geth). Cada linha importa.
-    🌎 Maximal Decentralization	Governança, funding e evolução comunitária.
-    🧱 PoW Forever	Proof-of-Work é intrínseco; PoS impossível por design.
-    🔄 Parallel Blockchain	Execução e validação massivamente paralela de blocos e transações.
-    ⚡ Energy & Multi-Asset Tokenization	Tokens lastreados em energia, commodities ou outros ativos, integrados à blockchain.
+[![CI/CD](https://img.shields.io/github/actions/workflow/status/scoobiii/Kindelia/ci.yml)](https://github.com/scoobiii/Kindelia/actions)
+[![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/scoobiii/Kindelia)
+[![DAO Status](https://img.shields.io/badge/DAO-Active-blue)](https://github.com/scoobiii/Kindelia/blob/master/docs/DAO_STRUCTURE.md)
 
 ---
 
-## 📚 Documentation
+## 🚧 Visão Geral
 
-| File | Description |
-|------|--------------|
-| [`WHITEPAPER.md`](https://github.com/scoobiii/Kindelia/blob/master/WHITEPAPER.md) | Fundamentos técnicos e consenso funcional |
-| [`WHITEBOOK.md`](https://github.com/scoobiii/Kindelia/blob/master/WHITEBOOK.md) | Design teórico e arquitetura HVM |
-| [`ROADMAP.md`](https://github.com/scoobiii/Kindelia/blob/master/ROADMAP.md) | Marcos de desenvolvimento e integração DAO |
-| [`ARCHITECTURE.md`](https://github.com/scoobiii/Kindelia/blob/master/docs/ARCHITECTURE.md) | Arquitetura por camadas (Core → DApps → DAO) |
-| [`DAO_STRUCTURE.md`](https://github.com/scoobiii/Kindelia/blob/master/docs/DAO_STRUCTURE.md) | Governança, propostas e funding |
-| [`MONETIZATION_MODEL.md`](https://github.com/scoobiii/Kindelia/blob/master/docs/MONETIZATION_MODEL.md) | Incentivos tokenless e sustentabilidade |
+Kindelia é um **cryptocomputer funcional** projetado para:
 
----
+* Execução **massivamente paralela** de DApps.
+* Blockchain **permanente e auditável**.
+* Governança via **DAO ativa**.
+* **Tokenização de energia** (kWh) e **multi-ativos** produtivos.
+* Integração de front-end acessível, voz e dispositivos móveis 60+.
 
-## 🧠 HVM Runtime
-
-Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcional de alta performance que suporta **avaliação paralela de termos lambda** e execução de DApps **em tempo real**.
+O projeto é inspirado em Ethereum e Type-Theory, mas **minimalista, seguro e funcional**, com ~10k LOC em Rust, executando **códigos puramente funcionais** e permitindo auditoria reversível de todos os blocos.
 
 ---
 
-## 💾 Wallet, Blocos e Consenso
+## ⚙️ Filosofia Central
 
-- **Wallet**: Ed25519 + DID, armazenamento seguro e integração com front-end PWA.  
-- **Transações**: gerenciamento completo, verificação de assinatura, broadcast via P2P.  
-- **Consenso**: PoW nativo, 1s block-time, reversível e auditável.  
-- **Blockchain Massivamente Paralela**: execução paralela de blocos, Merkle Trees para auditoria, ledger distribuído.  
-- **DAO**: governança ativa, propostas, votação e treasury totalmente implementados.  
-
-### 🔧 Para DevOps
-- Dockerfile e `docker-compose.yml` prontos para build e deploy do node completo.  
-- API RPC/WebSocket disponível para integração de DApps.  
-- Scripts de teste e bench prontos (`scripts/test.sh`, `scripts/bench.sh`).  
-
----
-
-## 🖥️ Front-End / UX60+
-
-- **PWA Offline**: perfeito para usuários 60+, smartphones e tablets.  
-- **Modo Avó**: transações simplificadas em 1 clique.  
-- **Voice UI**: leitura e comando por voz.  
-- **Integração direta** com Wallet, transações e API do HVM.  
+| Princípio                      | Detalhes                                                                              |
+| ------------------------------ | ------------------------------------------------------------------------------------- |
+| 🪙 **Sem moeda nativa**        | Valor reside na computação e no processamento de dados.                               |
+| ⚡ **Eficiência Funcional**     | HVM executa termos lambda paralelos com consumo mínimo.                               |
+| ⏱️ **Execução em Tempo Real**  | Blocos de 1 segundo, heaps reversíveis, armazenamento gratuito (SSTORE).              |
+| 🌎 **Descentralização Máxima** | Governança, financiamento e evolução comunitária.                                     |
+| 🧩 **Minimalismo Extremo**     | Apenas o essencial: ~10k LOC vs 600k+ em Geth.                                        |
+| 🔄 **Blockchain Paralela**     | Execução e validação massivamente paralela.                                           |
+| ⚡ **Tokenização de Ativos**    | Energia (kWh) e outros ativos podem ser financiados e comercializados via blockchain. |
+| 🛡️ **Segurança Total**        | Criptografia avançada, ZK-Proofs, resistência quântica e verificação formal.          |
 
 ---
 
-## 🌳 Arquitetura Geral
+## 🌳 Arquitetura Dinâmica
 
-       graph TB
-    %% Core Layer
-    subgraph CORE["⚙️ Core Layer"]
-        HVM["HVM Runtime"]
-        KIND["Kindelia Protocol"]
-        CONS["Consensus PoW"]
-        WALLET["Wallet (Ed25519 + DID)"]
-        TX["Transaction Manager"]
+O diagrama abaixo representa todas as camadas do Kindelia, incluindo **tokenização de energia e multi-ativos**:
+
+```mermaid
+---
+config:
+    layout: elk
+---
+flowchart TB
+    subgraph CORE["🔷 CAMADA CORE"]
+        HVM["⚡ HVM Runtime"]
+        KIND["🌐 Protocolo Kindelia"]
+        CONS["🔐 Consenso PoW"]
+        EXEC["⚙️ Camada de Execução"]
     end
 
-    %% Data & State
-    subgraph DATA["💾 Data & State"]
-        STATE["State Manager"]
-        BLOCKS["Block Storage"]
-        MERKLE["Merkle Trees / Hashing"]
+    subgraph INFRA["🏗️ INFRAESTRUTURA"]
+        NODES["🖥️ Nós Funcionais"]
+        API["🌐 API RPC Pública"]
+        PROVIDERS["☁️ Provedores de Nós"]
+        P2P["🔗 Rede P2P"]
     end
 
-    %% Network
-    subgraph NET["🌐 Network"]
-        P2P["P2P Mesh"]
-        API["RPC / WebSocket API"]
+    subgraph DATA["💾 CAMADA DE DADOS"]
+        STATE["📊 Gestão de Estado"]
+        BLOCKS["🧊 Armazenamento de Blocos"]
+        MERKLE["🌳 Árvores de Merkle"]
+        IPFS["📦 Integração IPFS"]
     end
 
-    %% DAO Governance
-    subgraph DAO["🏛️ Governance"]
-        GOV["DAO Governance"]
-        PROPOSAL["Proposals"]
-        VOTE["Voting System"]
-        TREASURY["Treasury & Tokenomics"]
+    subgraph DEVTOOLS["🛠️ FERRAMENTAS DE DESENVOLVIMENTO"]
+        COMPILER["📝 Compilador KindeLang"]
+        HVMJS["🌐 Runtime HVM.js"]
+        IDE["💻 Plugin IDE"]
+        DOCS["📚 Docs & SDK"]
+        CLI["⌨️ Ferramentas CLI"]
+        DEBUGGER["🐛 Depurador Funcional"]
     end
 
-    %% Front-end
-    subgraph FRONT["🖥️ Front-End / UX60+"]
-        PWA["PWA Offline"]
-        UX["Accessibility / Voice UI"]
+    subgraph WALLET["💼 CARTEIRA & IDENTIDADE"]
+        UACCESS["🔑 Gerenciador de Acesso"]
+        SIGNS["✍️ Motor de Assinaturas"]
+        DID["🧬 Identidade Descentralizada"]
+        STORAGE["🔐 Armazenamento Local"]
     end
 
-    %% Tokenization Module
-    subgraph TOKEN["⚡ Energy & Multi-Asset Tokenization"]
-        PROJ["Projetos de Energia / Ativos"]
-        TOKENIZE["Tokenização"]
-        ALIEN["Alienação a Financiadores"]
-        SMART["Smart Contract"]
-        TRADE["Venda Secundária / Híbridos"]
+    subgraph SECURITY["🛡️ SEGURANÇA"]
+        AUDIT["🔒 Verificação Formal"]
+        CRYPTO["🔐 Criptografia Avançada"]
+        ZKSEC["🎭 Zero-Knowledge Proofs"]
+        QRES["🌌 Resistência Quântica"]
     end
 
-    %% Connections Core → Data → Network
-    HVM --> KIND
-    KIND --> CONS
-    KIND --> TX
-    KIND --> WALLET
-    KIND --> P2P
-    KIND --> STATE
-    STATE --> BLOCKS
-    STATE --> MERKLE
-    TX --> BLOCKS
+    subgraph ECONOMY["💎 ECONOMIA & TOKENOMIA"]
+        GAS["⛽ Modelo de Gas"]
+        STAKE["🏦 Staking Funcional"]
+        MARKET["🛒 Marketplace DApps"]
+        TREASURY["💰 Tesouraria DAO"]
+        REWARDS["🎁 Sistema de Recompensas"]
+    end
 
-    %% Connections DAO
-    GOV --> PROPOSAL
-    PROPOSAL --> VOTE
-    TREASURY --> GOV
+    subgraph GOV["🏛️ GOVERNANÇA"]
+        DAO["🗳️ DAO"]
+        PROPOSAL["📝 Sistema de Propostas"]
+        VOTING["✅ Votação"]
+    end
 
-    %% Front-end connections
-    PWA --> WALLET
-    PWA --> TX
-    UX --> PWA
-    PWA --> API
+    subgraph APPS["🎯 APLICAÇÕES"]
+        DAPPS["🚀 DApps Funcionais"]
+        CONTRACTS["📜 Contratos Lambda"]
+        TEMPLATES["📋 Modelos de Aplicação"]
+        DEFI["💰 Protocolos DeFi"]
+        NFT["🎨 Padrões NFT"]
+    end
 
-    %% Tokenization connections
-    PROJ --> TOKENIZE
-    TOKENIZE --> ALIEN
-    ALIEN --> SMART
-    SMART --> TRADE
+    subgraph ANALYTICS["📊 ANALÍTICA"]
+        SCAN["🔍 KindScan"]
+        MONITOR["📈 Monitor de Runtime"]
+        STATS["📉 Estatísticas de Rede"]
+        ALERTS["🔔 Alertas"]
+    end
 
-        
-⚡ Energy & Multi-Asset Tokenization
+    subgraph TOKEN["⚡ TOKENIZAÇÃO DE ENERGIA & MULTI-ATIVOS"]
+        ENERGY["☀️ Energia (kWh)"]
+        ASSETS["🏭 Outros Ativos"]
+        SMARTCONTRACT["📜 Contratos Inteligentes"]
+        FINANCE["💰 Financiamento / Alienação"]
+        MARKETPLACE["🛒 Mercado Secundário / Híbrido"]
+    end
 
-Kindelia agora suporta tokenização de energia e outros ativos produtivos, permitindo financiar e comercializar recursos reais diretamente via blockchain.
+    %% Conexões
+    HVM --> KIND & COMPILER
+    KIND --> CONS & EXEC & NODES & P2P & STATE & DOCS & AUDIT & CRYPTO & GAS & DAO & SCAN & MONITOR
+    NODES --> API & STATS
+    API --> PROVIDERS
+    STATE --> BLOCKS & MERKLE
+    BLOCKS --> IPFS
+    COMPILER --> HVMJS & IDE & CLI & CONTRACTS
+    HVMJS --> DEBUGGER & DAPPS
+    EXEC --> DAPPS
+    DAPPS --> CONTRACTS & TEMPLATES & MARKET
+    CONTRACTS --> DEFI & NFT
+    CRYPTO --> ZKSEC
+    ZKSEC --> QRES
+    CONS --> STAKE
+    STAKE --> TREASURY & REWARDS & VOTING
+    DAO --> PROPOSAL
+    PROPOSAL --> VOTING
+    STATS --> ALERTS
+    SCAN --> BLOCKS
+    MONITOR --> NODES
+    AUDIT --> CONTRACTS
+    WALLET --> API & CRYPTO & DAPPS & DAO
+    SIGNS --> POST
+    DID --> PROPOSAL
+    UACCESS --> DAPPS & CLI
+    TOKEN --> SMARTCONTRACT & FINANCE & MARKETPLACE
+    ENERGY --> TOKEN
+    ASSETS --> TOKEN
+    SMARTCONTRACT --> CONTRACTS & DAPPS
+    FINANCE --> TREASURY & DAO
+    MARKETPLACE --> MARKET & DEFI
+```
 
-Fluxo de Tokenização de Energia
-
-       graph TD
-    A[Projeto de Energia / Ativo] --> B[Definir Capacidade e Consumo]
-    B --> C[Calcular Limite de Produção / Teto do Ativo]
-    C --> D[Tokenização do Ativo]
-    D --> E[Emissão de Tokens Lastreados]
-    E --> F[Alienação a Financiador]
-    F --> G[Definir Parcelas / Retorno]
-    G --> H[Smart Contract: Controle e Alienação]
-    H --> I[Implantação / Produção]
-    I --> J[Medir Produção Real]
-    J --> K[Liquidação para Financiador]
-    J --> L[Produção Excedente?]
-    L --> |Sim| M[Emitir Tokens Extras ou Híbridos]
-    L --> |Não| N[Fim do Ciclo]
-    K --> N
-    M --> N
-
-
-
-Benefícios:
-
-Emissão de tokens compatível com capacidade máxima de produção.
-
-Parcelas de financiamento ≤90% da conta/valor atual.
-
-Possibilidade de venda secundária ou criação de ativos híbridos.
-
-Aplicável a energia, commodities ou outros setores produtivos.
 ---
 
-## 🚀 Quick Start with Docker
+## 🚀 Iniciando com Docker
 
 ```bash
-# Build Docker image
+# Build da imagem Docker
 docker build -t scoobiii/kindelia .
 
-# Run node
+# Executar nó
 docker run -d --name kindelia-node -p 8080:8080 scoobiii/kindelia
 
-# Or using docker-compose
+# Ou com docker-compose
 docker-compose up -d
 ```
 
-Isso inicia **um nó completo** pronto para testar DApps, blockchain e wallet.
+---
+
+## 📂 Estrutura de Arquivos
+
+```
+Kindelia/
+├── README.md
+├── Dockerfile
+├── docker-compose.yml
+├── Cargo.toml
+├── Cargo.lock
+├── default.toml
+├── rust-toolchain
+├── src/
+│   ├── api/
+│   ├── cli.rs
+│   ├── common.rs
+│   ├── crypto.rs
+│   ├── dao/
+│   ├── devtools/
+│   ├── hvm.rs
+│   ├── node.rs
+│   ├── wallet/
+│   └── ...
+├── docs/
+│   ├── WHITEPAPER.md
+│   ├── WHITEBOOK.md
+│   ├── ARCHITECTURE.md
+│   ├── DAO_STRUCTURE.md
+│   ├── TOKENIZATION.md
+│   └── ...
+├── scripts/
+│   ├── test.sh
+│   └── bench.sh
+├── examples/
+├── benches/
+├── tests/
+├── kdl/
+├── assets/
+└── TODO.md
+```
 
 ---
 
-## 💡 Nota
+## 📜 Principais Funcionalidades
 
-Kindelia combina **computação funcional distribuída** + **blockchain paralela** + **DAO** + **front-end acessível**, tornando-o adequado para:
-
-* Desenvolvedores Web3 avançados
-* Pesquisadores de blockchain funcional
-* Usuários finais em dispositivos móveis, inclusive 60+
-
+1. **High-Order Virtual Machine**: Execução funcional de termos lambda com paralelismo.
+2. **Blockchain Massivamente Paralela**: Blocos auditáveis, 1s block-time.
+3. **Tokenização de Energia e Multi-Ativos**: Financiamento, alienação e mercado secundário.
+4. **DAO e Governança**: Propostas, votações e tesouraria comunitária.
+5. **Front-End Acessível**: PWA, modo 60+, comandos por voz.
+6. **Segurança de Ponta**: Criptografia, ZK-Proofs e resistência quântica.
+7. **Ferramentas DevOps e SDK**: CLI, IDE, compilador KindeLang, depurador funcional.
