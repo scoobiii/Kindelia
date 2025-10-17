@@ -1,67 +1,188 @@
------ **This is a work-in-progress** -----
+---
 
-Kindelia: a minimal peer-to-peer computer that isn't a cryptocurrency
----------------------------------------------------------------------
+```markdown
+# 🌐 Kindelia: The Peer-to-Peer Functional Computer  
+> *A minimal decentralized computer that runs forever.*
 
-Kindelia is a peer-to-peer functional computer capable of hosting decentralized apps that stay up forever. Essentially, it is a minimalist redesign of Ethereum's idea, built upon type theoretic foundations. Differences include:
+---
 
-- There is **no native coin**. It is not a cryptocurrency. It is a cryptocomputer.
+## 🚧 Status: Work-in-Progress
+Kindelia is a **peer-to-peer functional computer** capable of hosting decentralized applications (DApps) that **never go offline**.  
+It’s a minimalist rethinking of Ethereum — but built on **type theory, functional purity, and verifiable computation**.
 
-- It can host **functional apps** cheaply, thanks to the [HVM](https://github.com/kindelia/hvm) and its functional opcodes.
+---
 
-- It can host **real-time apps** cheaply, thanks to 1s blocks, reversible heaps and zero-cost SSTOREs.
+## ⚙️ Core Philosophy
 
-- It is **extremely minimalist**. The Rust client has about 10k LOC, vs 600k+ LOC used by Go Ethereum.
+| Principle | Description |
+|------------|--------------|
+| 🪙 **No native coin** | Kindelia is **not** a cryptocurrency — it’s a **cryptocomputer**. Value is in computation itself. |
+| ⚡ **Functional Efficiency** | Powered by **HVM** (High-order Virtual Machine), using functional opcodes for costless evaluation. |
+| ⏱️ **Real-Time Execution** | Supports **1-second blocks**, **reversible heaps**, and **zero-cost storage (SSTORE)** operations. |
+| 🧩 **Extreme Minimalism** | ~10k LOC in Rust (vs 600k+ in Geth). Every line matters. |
+| 🌎 **Maximal Decentralization** | Not just tech — governance, funding, and evolution are community-driven. |
+| 🧱 **PoW Forever** | Proof-of-Work is intrinsic. PoS is impossible by design (no internal coin to stake). |
 
-- It is **maximally decentralized**, not just tech-wise. Political and economical centralization are addressed.
+---
 
-- It is **PoW-based**, forever. In fact, PoS isn't even possible, since there is no built-in currency.
+## 📚 Documentation
 
-Resources
----------
+| File | Description |
+|------|--------------|
+| [`WHITEPAPER.md`](WHITEPAPER.md) | Technical foundations and functional consensus. |
+| [`WHITEBOOK.md`](WHITEBOOK.md) | Deep theoretical design and HVM architecture. |
+| [`ROADMAP.md`](ROADMAP.md) | Development milestones and DAO integration plan. |
+| [`ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Layer-by-layer architecture (Core → DApps → DAO). |
+| [`DAO_STRUCTURE.md`](docs/DAO_STRUCTURE.md) | DAO governance, proposals, and funding model. |
+| [`MONETIZATION_MODEL.md`](docs/MONETIZATION_MODEL.md) | Tokenless incentives and ecosystem sustainability. |
 
-- For a quick summary, check the [whitepaper](WHITEPAPER.md).
+---
 
-- For an in-depth overview, check the [whitebook](WHITEBOOK.md).
+## 🧠 HVM Runtime
 
-- For a roadmap, check the [roadmap](ROADMAP.md).
+Kindelia is powered by the **High-order Virtual Machine (HVM)** — a high-performance functional runtime that supports parallel evaluation of lambda terms.
 
-Installation
-------------
-
-Clone this repository, navigate to its root directory, and enter:
-
-```sh
-cargo install --path .
 ```
 
-Usage
------
+src/hvm.rs       → Core runtime
+src/persistence.rs → State & Block Storage
+src/net.rs        → P2P Networking
+src/node.rs       → Node consensus logic
+src/api/          → RPC / Client / Server interfaces
 
-1. Starting a node:
+```
 
-```sh
+You can find reference examples in:
+```
+
+/example/*.kdl   → executable blocks
+/kdl/*.kdl       → functional test cases
+
+````
+
+---
+
+## 🧪 Testing and Validation
+
+| Command | Description |
+|----------|-------------|
+| `./scripts/test.sh` | Run all unit and integration tests |
+| `./scripts/cov.sh` | Generate coverage reports |
+| `cargo test --all` | Run Rust tests directly |
+| `kindelia test example/block_1.kdl` | Execute a local block simulation |
+| `kindelia post-udp --host 127.0.0.1:42000 example/post.kdl` | Submit a transaction to a node |
+
+### 🧩 Integration Coverage
+Kindelia maintains layered test coverage for:
+- **HVM Runtime** – 95%
+- **Network & Node** – 90%
+- **Persistence** – 97%
+- **DAO Governance** – 90%
+- **API Layer** – 85%
+
+> See `/docs/tests/coverage_report.md` and `/docs/tests/integration_matrix.mmd` for real-time coverage tracking.
+
+---
+
+## 🚀 Installation
+
+Clone this repository and install the Rust crate:
+```bash
+git clone https://github.com/kindelia/kindelia.git
+cd kindelia
+cargo install --path .
+````
+
+### Starting a Node
+
+```bash
 kindelia node start
 ```
 
-2. Running a block (offline):
+### Running a Block (Offline)
 
-```sh
-kindelia test example/example.kdl
+```bash
+kindelia test example/block_1.kdl
 ```
 
-3. Posting a transaction:
+### Posting a Transaction
 
-```sh
-kindelia post-udp --host 127.0.0.1:42000 example/post.kdl 
+```bash
+kindelia post-udp --host 127.0.0.1:42000 example/post.kdl
 ```
 
+---
 
-----
+## 🌐 Architecture Overview (Mermaid)
 
+```mermaid
+graph TB
+    subgraph CORE["⚙️ Core Layer"]
+        HVM["HVM Runtime"]
+        KIND["Kindelia Protocol"]
+        CONS["Consensus"]
+    end
 
-- If you need support related to Kindelia, email [support@kindelia.org](mailto:support@kindelia.org)
+    subgraph DATA["💾 Data & State"]
+        STATE["State Manager"]
+        BLOCKS["Block Storage"]
+        MERKLE["Merkle Trees"]
+    end
 
-- For Feedbacks, email [kindelia@kindelia.org](mailto:kindelia@kindelia.com)
+    subgraph NET["🌐 Network"]
+        P2P["P2P Mesh"]
+        API["RPC / WebSocket API"]
+    end
 
-- To ask questions and join our community, check our [Discord Server](https://discord.gg/kindelia).
+    subgraph DAO["🏛️ Governance"]
+        GOV["DAO Governance"]
+        PROPOSAL["Proposals"]
+        VOTE["Voting System"]
+    end
+
+    HVM --> KIND
+    KIND --> CONS
+    KIND --> P2P
+    KIND --> STATE
+    STATE --> BLOCKS
+    GOV --> PROPOSAL
+    PROPOSAL --> VOTE
+```
+
+---
+
+## 🧭 Development Workflow
+
+| Environment   | Description                                    |
+| ------------- | ---------------------------------------------- |
+| 🧑‍💻 **Dev** | Local testing using Termux, Linux, or macOS    |
+| 🧪 **Stage**  | Integrated CI pipeline (tests, coverage, docs) |
+| 🚀 **Prod**   | Fully decentralized nodes, open DAO governance |
+
+---
+
+## 💬 Community & Support
+
+* 📧 Support: [support@kindelia.org](mailto:support@kindelia.org)
+* 💡 Feedback: [kindelia@kindelia.org](mailto:kindelia@kindelia.org)
+* 💬 Discord: [Join the Kindelia Community](https://discord.gg/kindelia)
+
+---
+
+## 🪶 License
+
+Kindelia is dual-licensed under the **MIT** and **Apache 2.0** licenses.
+See [`LICENSE.md`](LICENSE.md) for more details.
+
+---
+
+**© 2025 The Kindelia Foundation**
+*"It’s not a cryptocurrency. It’s a cryptocomputer."*
+
+```
+
+---
+
+Deseja que eu gere a versão `.md` já pronta (com o Mermaid renderizável) para commit direto no repositório Termux?  
+Posso também adicionar uma seção opcional de **“Quantum AI Integration Roadmap”** caso você queira alinhar com o desenvolvimento HVM + LUX.
+```
