@@ -81,7 +81,7 @@ Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcion
 
 ## 🌳 Arquitetura Geral
 
-        ```mermaid
+        
         graph TB
             %% Core Layer
             subgraph CORE["⚙️ Core Layer"]
@@ -140,7 +140,7 @@ Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcion
             PWA --> TX
             UX --> PWA
             PWA --> API
-        ````
+        
 ⚡ Energy & Multi-Asset Tokenization
 
 Kindelia agora suporta tokenização de energia e outros ativos produtivos, permitindo financiar e comercializar recursos reais diretamente via blockchain.
