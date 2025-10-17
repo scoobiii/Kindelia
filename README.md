@@ -1,4 +1,6 @@
-# 🌐 Kindelia: The Peer-to-Peer Functional Computer 
+
+````markdown
+# 🌐 Kindelia: The Peer-to-Peer Functional Computer  
 > *A minimal decentralized computer that runs forever.*  
 
 [![Docker Build](https://img.shields.io/docker/build/scoobiii/kindelia)](https://hub.docker.com/r/scoobiii/kindelia)  
@@ -9,7 +11,7 @@
 ---
 
 ## 🚧 Status: Work-in-Progress
-Kindelia é um **computador funcional peer-to-peer** capaz de hospedar **DApps descentralizados** que **nunca ficam offline**.  
+Kindelia é um **cryptocomputer com blockchain massivamente paralela**, capaz de hospedar **DApps descentralizados** que **nunca ficam offline**.  
 É um repensar minimalista do Ethereum, mas baseado em **type theory, functional purity e verifiable computation**.  
 
 **Fork melhorado por:** Zeh Sobrinho & GOS3, Gang of Seven Senior Full Stack DevOps (Grok, Manus, GPT, DeepSeek, Qwen, Claude, Gemini) & Scoobiii  
@@ -26,6 +28,7 @@ Kindelia é um **computador funcional peer-to-peer** capaz de hospedar **DApps d
 | 🧩 **Extreme Minimalism** | ~10k LOC em Rust (vs 600k+ em Geth). Cada linha importa. |
 | 🌎 **Maximal Decentralization** | Governança, funding e evolução comunitária. |
 | 🧱 **PoW Forever** | Proof-of-Work é intrínseco; PoS impossível por design. |
+| 🔄 **Parallel Blockchain** | Execução e validação massivamente paralela de blocos e transações. |
 
 ---
 
@@ -44,7 +47,7 @@ Kindelia é um **computador funcional peer-to-peer** capaz de hospedar **DApps d
 
 ## 🧠 HVM Runtime
 
-Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcional de alta performance que suporta avaliação paralela de termos lambda.
+Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcional de alta performance que suporta **avaliação paralela de termos lambda** e execução de DApps **em tempo real**.
 
 ---
 
@@ -53,6 +56,7 @@ Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcion
 - **Wallet**: Ed25519 + DID, armazenamento seguro e integração com front-end PWA.  
 - **Transações**: gerenciamento completo, verificação de assinatura, broadcast via P2P.  
 - **Consenso**: PoW nativo, 1s block-time, reversível e auditável.  
+- **Blockchain Massivamente Paralela**: execução paralela de blocos, Merkle Trees para auditoria, ledger distribuído.  
 - **DAO**: governança ativa, propostas, votação e treasury totalmente implementados.  
 
 ### 🔧 Para DevOps
@@ -132,3 +136,32 @@ graph TB
     PWA --> TX
     UX --> PWA
     PWA --> API
+````
+
+---
+
+## 🚀 Quick Start with Docker
+
+```bash
+# Build Docker image
+docker build -t scoobiii/kindelia .
+
+# Run node
+docker run -d --name kindelia-node -p 8080:8080 scoobiii/kindelia
+
+# Or using docker-compose
+docker-compose up -d
+```
+
+Isso inicia **um nó completo** pronto para testar DApps, blockchain e wallet.
+
+---
+
+## 💡 Nota
+
+Kindelia combina **computação funcional distribuída** + **blockchain paralela** + **DAO** + **front-end acessível**, tornando-o adequado para:
+
+* Desenvolvedores Web3 avançados
+* Pesquisadores de blockchain funcional
+* Usuários finais em dispositivos móveis, inclusive 60+
+
