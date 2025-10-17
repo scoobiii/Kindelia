@@ -1,0 +1,13 @@
+graph LR
+    HVM[HVM Core Runtime] --> KDB[Storage KDB]
+    HVM --> VM[Kindelia VM]
+    VM --> Consensus[Consensus Engine]
+    Consensus --> DAO[DAO Governance Contracts]
+    DAO --> Wallet[Wallet SDK + CLI]
+    Wallet --> API[Web3 Gateway API]
+    API --> UX[UX/UI Global]
+    QuantumAI((Quantum AI Module)) -.experimental.-> HVM
+    IDE[IDE Plugin] --> API
+    subgraph Legend
+      A[ ] --> B[Integration]
+    end
