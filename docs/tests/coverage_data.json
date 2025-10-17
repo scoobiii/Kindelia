@@ -1,0 +1,23 @@
+{
+  "generated_at": "2025-10-17T00:00:00Z",
+  "sprint": 2,
+  "modules": {
+    "HVM Core Runtime": 94,
+    "Kindelia VM Layer": 82,
+    "Consensus Engine": 71,
+    "Storage (KDB)": 88,
+    "Wallet SDK + CLI": 65,
+    "Web3 Gateway API": 76,
+    "DAO Governance Contracts": 91,
+    "Quantum AI Module": 37,
+    "IDE Plugin": 41,
+    "UX/UI Global": 52,
+    "Docs & API Reference": 100
+  },
+  "average": 72.6,
+  "target": 85,
+  "notes": [
+    "Prioridade: Wallet SDK, Consensus Engine, Quantum AI",
+    "Integrar com Codecov + GitHub Actions"
+  ]
+}
