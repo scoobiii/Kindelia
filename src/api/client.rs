@@ -151,3 +151,25 @@ impl ApiClient {
     self.get::<RegInfo>(&format!("/reg/{}", name)).await
   }
 }
+
+
+// adicione ao final de impl ApiClient
+use serde::{Serialize, Deserialize};
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct LoginRequest {
+    pub private_key: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct LoginResponse {
+    pub address: String,
+}
+
+impl ApiClient {
+  pub async fn login(&self, private_key: &str) -> ApiResult<LoginResponse> {
+    let body = LoginRequest { private_key: private_key.to_string() };
+    self.req::<LoginResponse, _>(reqwest::Method::POST, "/login", Some(body)).await
+  }
+}
+
