@@ -1,4 +1,4 @@
-# 🌐 Kindelia: The Peer-to-Peer Functional Computer (Fork Melhorado)  
+# 🌐 Kindelia: The Peer-to-Peer Functional Computer 
 > *A minimal decentralized computer that runs forever.*  
 
 [![Docker Build](https://img.shields.io/docker/build/scoobiii/kindelia)](https://hub.docker.com/r/scoobiii/kindelia)  
