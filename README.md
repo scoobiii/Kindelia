@@ -1,4 +1,4 @@
----
+
 
 ```markdown
 # 🌐 Kindelia: The Peer-to-Peer Functional Computer  
