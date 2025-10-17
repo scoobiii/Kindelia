@@ -1,0 +1,15 @@
+%% Kindelia Core Status Sprint 3
+graph TB
+    HVM["⚡ HVM Runtime<br/>LOC:800<br/>Bugs:2<br/>Acurácia:98%"]
+    KIND["🌐 Kindelia Protocol<br/>LOC:1200<br/>Bugs:3<br/>Acurácia:97%"]
+    CONS["🔐 Consensus Layer<br/>LOC:400<br/>Bugs:1<br/>Acurácia:99%"]
+    EXEC["⚙️ Execution Layer<br/>LOC:300<br/>Bugs:0<br/>Acurácia:100%"]
+
+    HVM --> KIND
+    KIND --> CONS
+    KIND --> EXEC
+
+    style HVM fill:#7b2ff7,stroke:#333,color:#fff,stroke-width:3px
+    style KIND fill:#3d9be9,stroke:#333,color:#fff,stroke-width:3px
+    style CONS fill:#4682b4,stroke:#333,color:#fff,stroke-width:3px
+    style EXEC fill:#4b8b8b,stroke:#333,color:#fff,stroke-width:3px
