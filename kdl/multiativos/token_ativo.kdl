@@ -1,0 +1,20 @@
+contract TokenAtivo {
+    state:
+        total_supply: Int = 0
+        balances: Map[Address, Int] = {}
+        ativos: Map[Address, String] = {}
+
+    function registrarAtivo(address: Address, descricao: String):
+        ativos[address] = descricao
+        log("Ativo registrado", address, descricao)
+
+    function mint(address: Address, quantidade: Int):
+        balances[address] += quantidade
+        total_supply += quantidade
+        log("Minted", address, quantidade)
+
+    function transfer(from: Address, to: Address, quantidade: Int):
+        assert(balances[from] >= quantidade, "Saldo insuficiente")
+        balances[from] -= quantidade
+        balances[to] += quantidade
+        log("Transfer", from, to, quantidade)
