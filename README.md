@@ -2,7 +2,6 @@
 # 🌐 Kindelia: The Peer-to-Peer Functional Computer  
 > *A minimal decentralized computer that runs forever.*  
 
-[![Docker Build](https://img.shields.io/docker/build/<usuario>/<repo>)](https://hub.docker.com/r/<usuario>/<repo>)
 [![CI/CD](https://img.shields.io/github/actions/workflow/status/scoobiii/Kindelia/ci.yml)](https://github.com/scoobiii/Kindelia/actions)  
 [![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/scoobiii/Kindelia)  
 [![DAO Status](https://img.shields.io/badge/DAO-Active-blue)](https://github.com/scoobiii/Kindelia/blob/master/docs/DAO_STRUCTURE.md)  
