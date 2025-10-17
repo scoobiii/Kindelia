@@ -18,7 +18,7 @@ use std::fmt::Debug;
 use std::ops::Deref;
 
 use reqwest::{Client, IntoUrl, Method, RequestBuilder, Url};
-use serde::{de::DeserializeOwned, Serialize};
+use serde::{Serialize, Deserialize};
 
 use crate::hvm::{self, Term};
 use crate::net::ProtoComm;
