@@ -247,7 +247,68 @@ Kindelia/
 └── TODO.md
 ```
 
+
 ---
+
+## 🧪 Testando Smart Contracts HVM
+
+A Kindelia suporta **smart contracts de energia e multi-ativos**, rodando **paralelamente na HVM**.
+
+### 1. Iniciar nó HVM local
+
+```bash
+docker-compose up -d
+# ou
+docker run -d --name kindelia-node -p 8080:8080 scoobiii/kindelia
+```
+
+### 2. Deploy e execução de contratos de energia
+
+```bash
+kdl run kdl/energia/token_energia.kdl --node http://localhost:8080
+kdl run kdl/energia/alienacao_energia.kdl --node http://localhost:8080
+kdl run kdl/energia/producao_excedente.kdl --node http://localhost:8080
+kdl run kdl/energia/liquidacao_energia.kdl --node http://localhost:8080
+```
+
+### 3. Deploy e execução de contratos multi-ativos
+
+```bash
+kdl run kdl/multiativos/token_multiativo.kdl --node http://localhost:8080
+kdl run kdl/multiativos/alienacao_multiativo.kdl --node http://localhost:8080
+kdl run kdl/multiativos/liquidacao_multiativo.kdl --node http://localhost:8080
+```
+
+### 4. Rodar testes automatizados
+
+```bash
+cargo test --test integracao/energia_test.rs
+cargo test --test integracao/multiativos_test.rs
+```
+
+> 🔹 Todos os contratos rodam **nativamente paralelizados** na HVM.
+> 🔹 Resultados e logs são persistidos via **State Manager** e podem ser monitorados via **KindScan** ou **Runtime Monitor**.
+
+---
+
+## 📖 Referência Detalhada
+
+Para documentação completa de **deploy, testes, métricas e cobertura**, consulte:
+
+```
+docs/DEPLOY_AND_TEST.md
+```
+
+Essa seção inclui:
+
+* Configuração avançada de nós HVM
+* Debug e logging de smart contracts
+* Procedimentos de alienação, liquidação e emissão de tokens
+* Integração com DAO e Tesouraria
+
+---
+
+
 
 ## 📜 Principais Funcionalidades
 
