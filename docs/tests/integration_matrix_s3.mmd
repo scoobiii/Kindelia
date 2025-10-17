@@ -1,0 +1,11 @@
+%% Sprint 3 Integration Matrix
+graph TB
+    HVM["HVM Runtime"] -->|RPC/Compiler| DAPPS["Dapps Integration"]
+    HVM -->|Token Calls| TOKEN["Tokenomics Integration"]
+    DAPPS -->|Smart Contracts| DAO["DAO Module"]
+    TOKEN --> DAO
+
+    style HVM fill:#7b2ff7,stroke:#333,color:#fff,stroke-width:2px
+    style DAPPS fill:#ff8c00,stroke:#333,color:#fff,stroke-width:2px,opacity:0.5
+    style TOKEN fill:#ffd700,stroke:#333,color:#000,stroke-width:2px,opacity:0.5
+    style DAO fill:#3d9be9,stroke:#333,color:#fff,stroke-width:2px
