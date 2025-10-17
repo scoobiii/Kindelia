@@ -1310,11 +1310,13 @@ Este projeto adota o [Contributor Covenant](CODE_OF_CONDUCT.md). Ao participar, 
 
 ### Comunidade
 
+- **GitHub**: [github.com/scoobiii/Kindelia](https://github.com/scoobiii/Kindelia)
 - **Discord**: [discord.gg/kindelia](https://discord.gg/kindelia)
 - **Telegram**: [t.me/kindelia](https://t.me/kindelia)
 - **Twitter**: [@KindeliaNet](https://twitter.com/KindeliaNet)
 - **LinkedIn**: [Kindelia Network](https://linkedin.com/company/kindelia)
 - **YouTube**: [Kindelia Tutorials](https://youtube.com/@kindelia)
+- **Email**: scoobiii@gmail.com
 
 ### Desenvolvimento
 
@@ -1322,6 +1324,7 @@ Este projeto adota o [Contributor Covenant](CODE_OF_CONDUCT.md). Ao participar, 
 - **Documentation**: [docs.kindelia.org](https://docs.kindelia.org)
 - **API Reference**: [api.kindelia.org](https://api.kindelia.org)
 - **Explorer**: [explorer.kindelia.org](https://explorer.kindelia.org)
+- **Contact**: scoobiii@gmail.com
 
 ### Recursos
 
@@ -1357,7 +1360,7 @@ Interessado em integrar Kindelia ao seu negócio? Temos programas especiais:
 - **Hackathons**: Eventos e premiações
 - **Developer Relations**: Suporte técnico
 
-**Contato**: partnerships@kindelia.org
+**Contato**: scoobiii@gmail.com
 
 ---
 
@@ -1410,7 +1413,7 @@ SOFTWARE.
 ### Core Team
 
 - **Victor Taelin**: HVM architecture
-- **Scoobiii**: Project lead & tokenization
+- **Scoobiii** (scoobiii@gmail.com): Project lead & tokenization
 - **Contributors**: Toda a comunidade open source
 
 ### Inspirações
@@ -1432,7 +1435,7 @@ Agradecemos a todos que acreditam em um futuro descentralizado e sustentável!
 
 - 📖 **Docs**: [docs.kindelia.org](https://docs.kindelia.org)
 - 💬 **Discord**: Suporte da comunidade 24/7
-- 📧 **Email**: support@kindelia.org
+- 📧 **Email**: scoobiii@gmail.com
 - 🐛 **Issues**: [GitHub Issues](https://github.com/scoobiii/Kindelia/issues)
 
 ### FAQ
