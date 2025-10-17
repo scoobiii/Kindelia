@@ -179,10 +179,3 @@ See [`LICENSE.md`](LICENSE.md) for more details.
 **© 2025 The Kindelia Foundation**
 *"It’s not a cryptocurrency. It’s a cryptocomputer."*
 
-```
-
----
-
-Deseja que eu gere a versão `.md` já pronta (com o Mermaid renderizável) para commit direto no repositório Termux?  
-Posso também adicionar uma seção opcional de **“Quantum AI Integration Roadmap”** caso você queira alinhar com o desenvolvimento HVM + LUX.
-```
