@@ -1,5 +1,4 @@
 
-````markdown
 # 🌐 Kindelia: The Peer-to-Peer Functional Computer  
 > *A minimal decentralized computer that runs forever.*  
 
@@ -8,7 +7,7 @@
 [![Test Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/scoobiii/Kindelia)  
 [![DAO Status](https://img.shields.io/badge/DAO-Active-blue)](https://github.com/scoobiii/Kindelia/blob/master/docs/DAO_STRUCTURE.md)  
 
----
+
 
 ## 🚧 Status: Work-in-Progress
 Kindelia é um **cryptocomputer com blockchain massivamente paralela**, capaz de hospedar **DApps descentralizados** que **nunca ficam offline**.  
