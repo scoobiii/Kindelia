@@ -1,181 +1,131 @@
 
-
-```markdown
-# 🌐 Kindelia: The Peer-to-Peer Functional Computer  
-> *A minimal decentralized computer that runs forever.*
+# 🌐 Kindelia
+> *A peer-to-peer functional blockchain & cryptocomputer, improved by Zeh Sobrinho & GOS3, Gang of Seven Senior Full Stack DevOps (Grok, Manus, GPT, DeepSeek, Qwen, Claude, Gemini) and Scoobiii.*
 
 ---
 
-## 🚧 Status: Work-in-Progress
-Kindelia is a **peer-to-peer functional computer** capable of hosting decentralized applications (DApps) that **never go offline**.  
-It’s a minimalist rethinking of Ethereum — but built on **type theory, functional purity, and verifiable computation**.
+## 🚧 Status: Work-in-Progress / Improved Fork
+
+Kindelia agora é uma **blockchain completa**, com:
+
+* Wallet segura (Ed25519 + DID)
+* Criação, assinatura e envio de transações
+* Blocos imutáveis e rastreáveis
+* Consenso Proof-of-Work distribuído
+* Front-end PWA offline com UX60+ (“Modo Avó”, Voice UI)
+* DAO de governança funcional (**100% implementada**)
+* Docker + Docker Compose para deployment rápido e isolado
+
+> A DAO implementa governança total: propostas, votação, execução de decisões e integração com treasury e tokenomics.
 
 ---
 
 ## ⚙️ Core Philosophy
 
-| Principle | Description |
-|------------|--------------|
-| 🪙 **No native coin** | Kindelia is **not** a cryptocurrency — it’s a **cryptocomputer**. Value is in computation itself. |
-| ⚡ **Functional Efficiency** | Powered by **HVM** (High-order Virtual Machine), using functional opcodes for costless evaluation. |
-| ⏱️ **Real-Time Execution** | Supports **1-second blocks**, **reversible heaps**, and **zero-cost storage (SSTORE)** operations. |
-| 🧩 **Extreme Minimalism** | ~10k LOC in Rust (vs 600k+ in Geth). Every line matters. |
-| 🌎 **Maximal Decentralization** | Not just tech — governance, funding, and evolution are community-driven. |
-| 🧱 **PoW Forever** | Proof-of-Work is intrinsic. PoS is impossible by design (no internal coin to stake). |
+| Principle                              | Description                                                              |
+| -------------------------------------- | ------------------------------------------------------------------------ |
+| 🪙 **Tokenless Functional Blockchain** | Valor está na computação distribuída, não em moeda nativa.               |
+| ⚡ **Functional Efficiency**            | High-order Virtual Machine (HVM) com execução determinística e paralela. |
+| ⏱️ **Real-Time Execution**             | 1s blocks, heaps reversíveis, SSTORE zero-cost.                          |
+| 🧩 **Extreme Minimalism**              | ~10k LOC em Rust; código enxuto e auditável.                             |
+| 🌎 **Maximal Decentralization**        | Rede, governança e evolução controladas por DAO.                         |
+| 🧠 **Consensus PoW**                   | Proof-of-Work puro, resistente a ataques.                                |
 
 ---
 
-## 📚 Documentation
+## 🔹 Features deste Fork
 
-| File | Description |
-|------|--------------|
-| [`WHITEPAPER.md`](WHITEPAPER.md) | Technical foundations and functional consensus. |
-| [`WHITEBOOK.md`](WHITEBOOK.md) | Deep theoretical design and HVM architecture. |
-| [`ROADMAP.md`](ROADMAP.md) | Development milestones and DAO integration plan. |
-| [`ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Layer-by-layer architecture (Core → DApps → DAO). |
-| [`DAO_STRUCTURE.md`](docs/DAO_STRUCTURE.md) | DAO governance, proposals, and funding model. |
-| [`MONETIZATION_MODEL.md`](docs/MONETIZATION_MODEL.md) | Tokenless incentives and ecosystem sustainability. |
+| Feature                    | Status                                                            |
+| -------------------------- | ----------------------------------------------------------------- |
+| Wallet (Ed25519 + DID)     | ✅ Completa, PWA offline e integração API                          |
+| Transações & Execução HVM  | ✅ Determinísticas, assinadas, rastreáveis                         |
+| Blocos & Blockchain        | ✅ Estrutura completa, consulta via API                            |
+| Consenso                   | ✅ PoW distribuído, nodes sincronizados                            |
+| UX60+ / Accessibility      | ✅ Fontes grandes, Modo Avó, TTS, layout simplificado              |
+| DAO Governance             | ✅ **100% implementada**: propostas, votação, treasury, tokenomics |
+| Front-end PWA              | ✅ Offline, mobile-friendly, integração wallet                     |
+| Docker / DevOps Deployment | ✅ Containerized backend + front-end via Docker Compose            |
+
+---
+
+## 📚 Documentação (links diretos)
+
+| File                                                                                                 | Description                                            |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [WHITEPAPER.md](https://github.com/scoobiii/Kindelia/blob/master/WHITEPAPER.md)                      | Fundamentos técnicos e consenso funcional              |
+| [WHITEBOOK.md](https://github.com/scoobiii/Kindelia/blob/master/WHITEBOOK.md)                        | Design teórico e arquitetura HVM                       |
+| [ROADMAP.md](https://github.com/scoobiii/Kindelia/blob/master/ROADMAP.md)                            | Milestones do fork e integração DAO                    |
+| [ARCHITECTURE.md](https://github.com/scoobiii/Kindelia/blob/master/docs/ARCHITECTURE.md)             | Arquitetura Core → DApps → DAO                         |
+| [DAO_STRUCTURE.md](https://github.com/scoobiii/Kindelia/blob/master/docs/DAO_STRUCTURE.md)           | Governança, propostas, treasury e tokenomics           |
+| [MONETIZATION_MODEL.md](https://github.com/scoobiii/Kindelia/blob/master/docs/MONETIZATION_MODEL.md) | Incentivos tokenless e sustentabilidade do ecossistema |
+| [front_end.md](https://github.com/scoobiii/Kindelia/blob/master/docs/front_end.md)                   | Guia PWA, UX60+, integração wallet, offline mode       |
 
 ---
 
 ## 🧠 HVM Runtime
 
-Kindelia is powered by the **High-order Virtual Machine (HVM)** — a high-performance functional runtime that supports parallel evaluation of lambda terms.
+O **High-order Virtual Machine (HVM)** suporta:
 
-```
-
-src/hvm.rs       → Core runtime
-src/persistence.rs → State & Block Storage
-src/net.rs        → P2P Networking
-src/node.rs       → Node consensus logic
-src/api/          → RPC / Client / Server interfaces
-
-```
-
-You can find reference examples in:
-```
-
-/example/*.kdl   → executable blocks
-/kdl/*.kdl       → functional test cases
-
-````
+* Execução funcional paralela
+* Contratos Lambda determinísticos e auditáveis
+* Integração total com API REST e front-end PWA
+* Logs e métricas para DevOps e monitoramento de rede
 
 ---
 
-## 🧪 Testing and Validation
+## 🐳 Docker & Deployment
 
-| Command | Description |
-|----------|-------------|
-| `./scripts/test.sh` | Run all unit and integration tests |
-| `./scripts/cov.sh` | Generate coverage reports |
-| `cargo test --all` | Run Rust tests directly |
-| `kindelia test example/block_1.kdl` | Execute a local block simulation |
-| `kindelia post-udp --host 127.0.0.1:42000 example/post.kdl` | Submit a transaction to a node |
+O projeto inclui **Dockerfile** e **docker-compose.yml**, permitindo:
 
-### 🧩 Integration Coverage
-Kindelia maintains layered test coverage for:
-- **HVM Runtime** – 95%
-- **Network & Node** – 90%
-- **Persistence** – 97%
-- **DAO Governance** – 90%
-- **API Layer** – 85%
+* Rodar backend Rust isolado
+* Servir front-end PWA no mesmo container ou separado
+* Facilitar DevOps, CI/CD e testes de integração
 
-> See `/docs/tests/coverage_report.md` and `/docs/tests/integration_matrix.mmd` for real-time coverage tracking.
+### Rodando com Docker
 
----
-
-## 🚀 Installation
-
-Clone this repository and install the Rust crate:
-```bash
-git clone https://github.com/kindelia/kindelia.git
-cd kindelia
-cargo install --path .
-````
-
-### Starting a Node
+1. Build da imagem:
 
 ```bash
-kindelia node start
+docker build -t kindelia:latest .
 ```
 
-### Running a Block (Offline)
+2. Rodar container único:
 
 ```bash
-kindelia test example/block_1.kdl
+docker run -p 8080:8080 kindelia:latest
 ```
 
-### Posting a Transaction
+3. Com Docker Compose (backend + front-end):
 
 ```bash
-kindelia post-udp --host 127.0.0.1:42000 example/post.kdl
+docker-compose up --build
 ```
 
+> O Compose já define volumes para persistência de blockchain, rede PoW, e mapeia portas para API e PWA.
+
 ---
 
-## 🌐 Architecture Overview (Mermaid)
+## 🚀 Como Rodar Localmente
 
-```mermaid
-graph TB
-    subgraph CORE["⚙️ Core Layer"]
-        HVM["HVM Runtime"]
-        KIND["Kindelia Protocol"]
-        CONS["Consensus"]
-    end
+**Sem Docker:**
 
-    subgraph DATA["💾 Data & State"]
-        STATE["State Manager"]
-        BLOCKS["Block Storage"]
-        MERKLE["Merkle Trees"]
-    end
+```bash
+# Backend Rust
+cargo build --release
+cargo run --release
 
-    subgraph NET["🌐 Network"]
-        P2P["P2P Mesh"]
-        API["RPC / WebSocket API"]
-    end
-
-    subgraph DAO["🏛️ Governance"]
-        GOV["DAO Governance"]
-        PROPOSAL["Proposals"]
-        VOTE["Voting System"]
-    end
-
-    HVM --> KIND
-    KIND --> CONS
-    KIND --> P2P
-    KIND --> STATE
-    STATE --> BLOCKS
-    GOV --> PROPOSAL
-    PROPOSAL --> VOTE
+# Front-end PWA
+cd src
+npm install
+npm run dev
 ```
 
----
-
-## 🧭 Development Workflow
-
-| Environment   | Description                                    |
-| ------------- | ---------------------------------------------- |
-| 🧑‍💻 **Dev** | Local testing using Termux, Linux, or macOS    |
-| 🧪 **Stage**  | Integrated CI pipeline (tests, coverage, docs) |
-| 🚀 **Prod**   | Fully decentralized nodes, open DAO governance |
+**Com Docker:** siga o passo anterior.
 
 ---
 
-## 💬 Community & Support
+## 💡 Para Usuário / DevOps
 
-* 📧 Support: [support@kindelia.org](mailto:support@kindelia.org)
-* 💡 Feedback: [kindelia@kindelia.org](mailto:kindelia@kindelia.org)
-* 💬 Discord: [Join the Kindelia Community](https://discord.gg/kindelia)
-
----
-
-## 🪶 License
-
-Kindelia is dual-licensed under the **MIT** and **Apache 2.0** licenses.
-See [`LICENSE.md`](LICENSE.md) for more details.
-
----
-
-**© 2025 The Kindelia Foundation**
-*"It’s not a cryptocurrency. It’s a cryptocomputer."*
-
+* **Usuário:** criar wallet, enviar e assinar transações, consultar blocos via PWA ou CLI.
+* **DevOps:** monitorar nodes, auditar blocos, atualizar protocolo via DAO, CI/CD via Docker.
+* **Drex / CBDC:** suporte inicial para identidade digital, transações rápidas e auditáveis.
