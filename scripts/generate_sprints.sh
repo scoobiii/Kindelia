@@ -36,3 +36,9 @@ EOF
 done
 
 echo "✅ Estrutura de Sprints criada em $BASE"
+
+## 
+chmod +x scripts/generate_sprints.sh
+bash scripts/generate_sprints.sh
+
+
