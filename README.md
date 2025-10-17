@@ -24,15 +24,15 @@ Criação de ativos híbridos, mesclando energia tokenizada com criptoativos cl�
 Fork melhorado por: Zeh Sobrinho & GOS3, Gang of Seven Senior Full Stack DevOps & Scoobiii
 
 ⚙️ Core Philosophy
-Principle	Description
-🪙 No native coin	Kindelia é um cryptocomputer, não uma criptomoeda. Valor está na computação e nos ativos tokenizados.
-⚡ Functional Efficiency	HVM (High-order Virtual Machine) executa códigos funcionais com custo mínimo.
-⏱️ Real-Time Execution	Blocos de 1 segundo, heaps reversíveis e armazenamento gratuito (SSTORE).
-🧩 Extreme Minimalism	~10k LOC em Rust (vs 600k+ em Geth). Cada linha importa.
-🌎 Maximal Decentralization	Governança, funding e evolução comunitária.
-🧱 PoW Forever	Proof-of-Work é intrínseco; PoS impossível por design.
-🔄 Parallel Blockchain	Execução e validação massivamente paralela de blocos e transações.
-⚡ Energy & Multi-Asset Tokenization	Tokens lastreados em energia, commodities ou outros ativos, integrados à blockchain.
+    Principle	Description
+    🪙 No native coin	Kindelia é um cryptocomputer, não uma criptomoeda. Valor está na computação e nos ativos tokenizados.
+    ⚡ Functional Efficiency	HVM (High-order Virtual Machine) executa códigos funcionais com custo mínimo.
+    ⏱️ Real-Time Execution	Blocos de 1 segundo, heaps reversíveis e armazenamento gratuito (SSTORE).
+    🧩 Extreme Minimalism	~10k LOC em Rust (vs 600k+ em Geth). Cada linha importa.
+    🌎 Maximal Decentralization	Governança, funding e evolução comunitária.
+    🧱 PoW Forever	Proof-of-Work é intrínseco; PoS impossível por design.
+    🔄 Parallel Blockchain	Execução e validação massivamente paralela de blocos e transações.
+    ⚡ Energy & Multi-Asset Tokenization	Tokens lastreados em energia, commodities ou outros ativos, integrados à blockchain.
 
 ---
 
@@ -81,87 +81,87 @@ Kindelia é movido pelo **High-order Virtual Machine (HVM)** — runtime funcion
 
 ## 🌳 Arquitetura Geral
 
-```mermaid
-graph TB
-    %% Core Layer
-    subgraph CORE["⚙️ Core Layer"]
-        HVM["HVM Runtime"]
-        KIND["Kindelia Protocol"]
-        CONS["Consensus PoW"]
-        WALLET["Wallet (Ed25519 + DID)"]
-        TX["Transaction Manager"]
-    end
-
-    %% Data & State
-    subgraph DATA["💾 Data & State"]
-        STATE["State Manager"]
-        BLOCKS["Block Storage"]
-        MERKLE["Merkle Trees / Hashing"]
-    end
-
-    %% Network
-    subgraph NET["🌐 Network"]
-        P2P["P2P Mesh"]
-        API["RPC / WebSocket API"]
-    end
-
-    %% DAO Governance
-    subgraph DAO["🏛️ Governance"]
-        GOV["DAO Governance"]
-        PROPOSAL["Proposals"]
-        VOTE["Voting System"]
-        TREASURY["Treasury & Tokenomics"]
-    end
-
-    %% Front-end
-    subgraph FRONT["🖥️ Front-End / UX60+"]
-        PWA["PWA Offline"]
-        UX["Accessibility / Voice UI"]
-    end
-
-    %% Connections Core → Data → Network
-    HVM --> KIND
-    KIND --> CONS
-    KIND --> TX
-    KIND --> WALLET
-    KIND --> P2P
-    KIND --> STATE
-    STATE --> BLOCKS
-    STATE --> MERKLE
-    TX --> BLOCKS
-
-    %% Connections DAO
-    GOV --> PROPOSAL
-    PROPOSAL --> VOTE
-    TREASURY --> GOV
-
-    %% Front-end connections
-    PWA --> WALLET
-    PWA --> TX
-    UX --> PWA
-    PWA --> API
-````
+        ```mermaid
+        graph TB
+            %% Core Layer
+            subgraph CORE["⚙️ Core Layer"]
+                HVM["HVM Runtime"]
+                KIND["Kindelia Protocol"]
+                CONS["Consensus PoW"]
+                WALLET["Wallet (Ed25519 + DID)"]
+                TX["Transaction Manager"]
+            end
+        
+            %% Data & State
+            subgraph DATA["💾 Data & State"]
+                STATE["State Manager"]
+                BLOCKS["Block Storage"]
+                MERKLE["Merkle Trees / Hashing"]
+            end
+        
+            %% Network
+            subgraph NET["🌐 Network"]
+                P2P["P2P Mesh"]
+                API["RPC / WebSocket API"]
+            end
+        
+            %% DAO Governance
+            subgraph DAO["🏛️ Governance"]
+                GOV["DAO Governance"]
+                PROPOSAL["Proposals"]
+                VOTE["Voting System"]
+                TREASURY["Treasury & Tokenomics"]
+            end
+        
+            %% Front-end
+            subgraph FRONT["🖥️ Front-End / UX60+"]
+                PWA["PWA Offline"]
+                UX["Accessibility / Voice UI"]
+            end
+        
+            %% Connections Core → Data → Network
+            HVM --> KIND
+            KIND --> CONS
+            KIND --> TX
+            KIND --> WALLET
+            KIND --> P2P
+            KIND --> STATE
+            STATE --> BLOCKS
+            STATE --> MERKLE
+            TX --> BLOCKS
+        
+            %% Connections DAO
+            GOV --> PROPOSAL
+            PROPOSAL --> VOTE
+            TREASURY --> GOV
+        
+            %% Front-end connections
+            PWA --> WALLET
+            PWA --> TX
+            UX --> PWA
+            PWA --> API
+        ````
 ⚡ Energy & Multi-Asset Tokenization
 
 Kindelia agora suporta tokenização de energia e outros ativos produtivos, permitindo financiar e comercializar recursos reais diretamente via blockchain.
 
 Fluxo de Tokenização de Energia
-graph TD
-    A[Projeto de Energia / Ativo] --> B[Definir Capacidade e Consumo]
-    B --> C[Calcular Limite de Produção / Teto do Ativo]
-    C --> D[Tokenização do Ativo]
-    D --> E[Emissão de Tokens Lastreados]
-    E --> F[Alienação a Financiador]
-    F --> G[Definir Parcelas / Retorno]
-    G --> H[Smart Contract: Controle e Alienação]
-    H --> I[Implantação / Produção]
-    I --> J[Medir Produção Real]
-    J --> K[Liquidação para Financiador]
-    J --> L[Produção Excedente?]
-    L --> |Sim| M[Emitir Tokens Extras ou Híbridos]
-    L --> |Não| N[Fim do Ciclo]
-    K --> N
-    M --> N
+        graph TD
+            A[Projeto de Energia / Ativo] --> B[Definir Capacidade e Consumo]
+            B --> C[Calcular Limite de Produção / Teto do Ativo]
+            C --> D[Tokenização do Ativo]
+            D --> E[Emissão de Tokens Lastreados]
+            E --> F[Alienação a Financiador]
+            F --> G[Definir Parcelas / Retorno]
+            G --> H[Smart Contract: Controle e Alienação]
+            H --> I[Implantação / Produção]
+            I --> J[Medir Produção Real]
+            J --> K[Liquidação para Financiador]
+            J --> L[Produção Excedente?]
+            L --> |Sim| M[Emitir Tokens Extras ou Híbridos]
+            L --> |Não| N[Fim do Ciclo]
+            K --> N
+            M --> N
 
 
 Benefícios:
