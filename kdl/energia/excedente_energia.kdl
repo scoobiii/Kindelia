@@ -1,0 +1,11 @@
+contract ExcedenteEnergia {
+    state:
+        excedente_total: Int = 0
+
+    function registrarExcedente(quantidade: Int):
+        excedente_total += quantidade
+        log("Excedente registrado", quantidade)
+
+    function emitirTokensExtras(token: Address, quantidade: Int):
+        call(token, "mint", quantidade)
+        log("Tokens extras emitidos", quantidade)
