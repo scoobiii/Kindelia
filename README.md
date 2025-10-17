@@ -9,24 +9,30 @@
 
 
 ## 🚧 Status: Work-in-Progress
-Kindelia é um **cryptocomputer com blockchain massivamente paralela**, capaz de hospedar **DApps descentralizados** que **nunca ficam offline**.  
-É um repensar minimalista do Ethereum, mas baseado em **type theory, functional purity e verifiable computation**.  
 
-**Fork melhorado por:** Zeh Sobrinho & GOS3, Gang of Seven Senior Full Stack DevOps (Grok, Manus, GPT, DeepSeek, Qwen, Claude, Gemini) & Scoobiii  
+Kindelia é um cryptocomputer com blockchain massivamente paralela, capaz de hospedar DApps descentralizados que nunca ficam offline.
+É um repensar minimalista do Ethereum, mas baseado em type theory, functional purity e verifiable computation.
 
----
+Agora, Kindelia integra um módulo de tokenização de energia e multiativos, permitindo:
 
-## ⚙️ Core Philosophy
+Tokenização de energia solar e outros ativos produtivos.
 
-| Principle | Description |
-|------------|--------------|
-| 🪙 **No native coin** | Kindelia é **um cryptocomputer**, não uma criptomoeda. Valor está na computação. |
-| ⚡ **Functional Efficiency** | HVM (High-order Virtual Machine) executa códigos funcionais com custo mínimo. |
-| ⏱️ **Real-Time Execution** | Blocos de 1 segundo, heaps reversíveis e armazenamento gratuito (SSTORE). |
-| 🧩 **Extreme Minimalism** | ~10k LOC em Rust (vs 600k+ em Geth). Cada linha importa. |
-| 🌎 **Maximal Decentralization** | Governança, funding e evolução comunitária. |
-| 🧱 **PoW Forever** | Proof-of-Work é intrínseco; PoS impossível por design. |
-| 🔄 **Parallel Blockchain** | Execução e validação massivamente paralela de blocos e transações. |
+Alienação a financiadores com parcelas compatíveis com contas de energia, juros ≤0,5% ao mês.
+
+Criação de ativos híbridos, mesclando energia tokenizada com criptoativos clássicos ou outros setores.
+
+Fork melhorado por: Zeh Sobrinho & GOS3, Gang of Seven Senior Full Stack DevOps & Scoobiii
+
+⚙️ Core Philosophy
+Principle	Description
+🪙 No native coin	Kindelia é um cryptocomputer, não uma criptomoeda. Valor está na computação e nos ativos tokenizados.
+⚡ Functional Efficiency	HVM (High-order Virtual Machine) executa códigos funcionais com custo mínimo.
+⏱️ Real-Time Execution	Blocos de 1 segundo, heaps reversíveis e armazenamento gratuito (SSTORE).
+🧩 Extreme Minimalism	~10k LOC em Rust (vs 600k+ em Geth). Cada linha importa.
+🌎 Maximal Decentralization	Governança, funding e evolução comunitária.
+🧱 PoW Forever	Proof-of-Work é intrínseco; PoS impossível por design.
+🔄 Parallel Blockchain	Execução e validação massivamente paralela de blocos e transações.
+⚡ Energy & Multi-Asset Tokenization	Tokens lastreados em energia, commodities ou outros ativos, integrados à blockchain.
 
 ---
 
@@ -135,7 +141,38 @@ graph TB
     UX --> PWA
     PWA --> API
 ````
+⚡ Energy & Multi-Asset Tokenization
 
+Kindelia agora suporta tokenização de energia e outros ativos produtivos, permitindo financiar e comercializar recursos reais diretamente via blockchain.
+
+Fluxo de Tokenização de Energia
+graph TD
+    A[Projeto de Energia / Ativo] --> B[Definir Capacidade e Consumo]
+    B --> C[Calcular Limite de Produção / Teto do Ativo]
+    C --> D[Tokenização do Ativo]
+    D --> E[Emissão de Tokens Lastreados]
+    E --> F[Alienação a Financiador]
+    F --> G[Definir Parcelas / Retorno]
+    G --> H[Smart Contract: Controle e Alienação]
+    H --> I[Implantação / Produção]
+    I --> J[Medir Produção Real]
+    J --> K[Liquidação para Financiador]
+    J --> L[Produção Excedente?]
+    L --> |Sim| M[Emitir Tokens Extras ou Híbridos]
+    L --> |Não| N[Fim do Ciclo]
+    K --> N
+    M --> N
+
+
+Benefícios:
+
+Emissão de tokens compatível com capacidade máxima de produção.
+
+Parcelas de financiamento ≤90% da conta/valor atual.
+
+Possibilidade de venda secundária ou criação de ativos híbridos.
+
+Aplicável a energia, commodities ou outros setores produtivos.
 ---
 
 ## 🚀 Quick Start with Docker
