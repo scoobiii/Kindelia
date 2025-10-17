@@ -1,0 +1,5 @@
+function deploy():
+    energia = TokenEnergia()
+    energia.mint("0xFinanciador1", 1000)
+    energia.mint("0xCliente1", 500)
+    log("Deploy completo", energia.total_supply)
