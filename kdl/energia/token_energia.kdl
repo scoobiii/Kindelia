@@ -1,0 +1,20 @@
+contract TokenEnergia {
+    state:
+        total_supply: Int = 0
+        balances: Map[Address, Int] = {}
+
+    function mint(address: Address, quantidade: Int):
+        balances[address] += quantidade
+        total_supply += quantidade
+        log("Minted", address, quantidade)
+
+    function transfer(from: Address, to: Address, quantidade: Int):
+        assert(balances[from] >= quantidade, "Saldo insuficiente")
+        balances[from] -= quantidade
+        balances[to] += quantidade
+        log("Transfer", from, to, quantidade)
+
+    function liquidarEnergia(address: Address, quantidade: Int):
+        assert(balances[address] >= quantidade, "Saldo insuficiente")
+        balances[address] -= quantidade
+        log("Liquidação", address, quantidade)
