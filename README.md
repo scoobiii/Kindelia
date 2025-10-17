@@ -165,6 +165,31 @@ flowchart TB
     MARKETPLACE --> MARKET & DEFI
 ```
 
+## ⚡ Tokenização de Energia e Multi-Ativos
+
+A Kindelia agora suporta emissão de tokens lastreados em **energia** e **ativos físicos**, integrados diretamente na **HVM paralelizada**.
+
+Fluxo de tokenização:
+
+```mermaid
+flowchart TB
+    A[Projeto de Energia / Ativo] --> B[Definir Capacidade e Consumo]
+    B --> C[Calcular Limite de Produção / Teto do Ativo]
+    C --> D[Tokenização do Ativo]
+    D --> E[Emissão de Tokens Lastreados]
+    E --> F[Alienação a Financiador]
+    F --> G[Definir Parcelas / Retorno]
+    G --> H[Smart Contract: Controle e Alienação]
+    H --> I[Implantação / Produção]
+    I --> J[Medir Produção Real]
+    J --> K[Liquidação para Financiador]
+    J --> L[Produção Excedente?]
+    L --> |Sim| M[Emitir Tokens Extras ou Híbridos]
+    L --> |Não| N[Fim do Ciclo]
+    K --> N
+    M --> N
+```
+
 ---
 
 ## 🚀 Iniciando com Docker
