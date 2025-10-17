@@ -1,0 +1,8 @@
+function deployMultiativos():
+    tokenAtivo = TokenAtivo()
+    alienacaoAtivo = AlienacaoAtivo()
+
+    tokenAtivo.registrarAtivo("0xEmpresa1", "Galpão Logístico")
+    tokenAtivo.mint("0xInvestidor1", 100)
+    alienacaoAtivo.registrarContrato("0xInvestidor1", 100)
+    log("Deploy Multi-Ativos completo", tokenAtivo.total_supply)
